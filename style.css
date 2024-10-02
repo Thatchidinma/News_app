@@ -38,6 +38,12 @@ nav{
     padding: 20px;
 }
 
+/* loading style */
+#loading-indicator{
+    font-size: 2em;
+    font-style: italic;
+}
+
 /* News list styles */
 .news-list {
     list-style: none;
@@ -47,6 +53,12 @@ nav{
 .news-item {
     border-bottom: 1px solid #ccc;
     padding: 10px;
+}
+
+.news-item img {
+    width: 200px;
+    height: 200px;
+
 }
 
 .news-item h3 {
@@ -74,6 +86,60 @@ nav{
 .pagination button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+}
+
+/* Error style */
+.error-message {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+}
+
+/* comment style */
+/* styles.css */
+
+/* Comment section styles */
+#comment-section {
+    margin-top: 20px;
+}
+
+#comment-section h2 {
+    margin-bottom: 10px;
+}
+
+#comment-list {
+    list-style: none;
+    padding: 0;
+}
+
+#comment-list li {
+    margin-bottom: 5px;
+}
+
+#comment-form {
+    margin-top: 10px;
+}
+
+#comment-form input,
+#comment-form textarea {
+    width: 50%;
+    padding: 1em;
+    margin-top: 0.5em;
+    border: 2px solid black;
+}
+
+#comment-form button {
+    padding: 10px 20px;
+    background-color: rgb(0, 76, 255);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: block;
+}
+
+#comment-form button:hover {
+    background-color: rgb(0, 162, 255);
 }
 
 footer{

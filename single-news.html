@@ -13,7 +13,25 @@
         </nav>
     </header>
     <main>
-
+        <div class="container">
+            <h1 id="news-title"></h1>
+            <p id="news-author">By: </p>
+            <div id="loading-indicator">Loading...</div>
+            <img id="news-image" src="" alt="">
+            <div id="image-slider"></div>
+            <p id="news-content"></p>
+            <div id="comment-section">
+                <h2>Comments</h2>
+                <ul id="comment-list"></ul>
+                <form id="comment-form">
+                    <input type="text" id="comment-name" placeholder="Your name">
+                    <textarea id="comment-text" placeholder="Your comment"></textarea>
+                    <button type="submit">Add Comment</button>
+                </form>
+            </div>
+        </div>
+    
+        <script type="module" src="singleNews.js"></script>
     </main>
     <footer>news 2024</footer>
 </body>

@@ -6,14 +6,28 @@ let currentPage = 1;
 
 function fetchNews(page = currentPage) {
   const url = `https://61924d4daeab5c0017105f1a.mockapi.io/skaet/v1/news?page=${page}&limit=10`;
+  
 
   fetch(url)
     .then(response => response.json())
     .then(data => {
+      console.log(data)
       updateNewsList(data);
       updatePaginationButtons(data.length);
     })
-    .catch(error => console.error(error));
+    .catch(error => 
+        console.error(error),
+        displayErrorMessage('An error occurred while fetching news. Please try again later.')
+      );
+        ;
+}
+
+function displayErrorMessage(message) {
+  // Create an error message element and append it to the news list
+  const errorMessage = document.createElement('p');
+  errorMessage.textContent = message;
+  errorMessage.classList.add('error-message');
+  newsList.appendChild(errorMessage); 
 }
 
 function updateNewsList(news) {
@@ -25,6 +39,7 @@ function updateNewsList(news) {
 
     // Add news title, author, etc. (update based on your needs)
     newsElement.innerHTML = `
+      <img src=${newsItem.avatar} onerror="this.src='./images/news.jpg'" alt='an image'/>
       <h3>${newsItem.title}</h3>
       <p>By: ${newsItem.author}</p>
       <a href="single-news.html?id=${newsItem.id}">Read More</a>
